@@ -29,12 +29,19 @@ html {
 
 body {
     font-family: 'Open Sans';
-    background: #FFF1F8;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-bottom: 17px;
 }
+
+.women {
+    background: #FFF1F8;
+}
+
+.men {
+    background: #EFF9FE;
+}
+
 
 button {
     cursor: pointer;
@@ -64,6 +71,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .header__button-change {
@@ -76,6 +84,14 @@ img {
     font-size: 18px;
     color: #fff;
     margin-right: 30px;
+}
+
+.men .header__button-change {
+    background: #1178B2;
+}
+
+.women .header__button-change {
+    background: #C300C7;
 }
 
 .header__button-change:last-child {
@@ -101,17 +117,23 @@ img {
 
 .header__button-gender_men {
     background-image: url('../assets/ri_men-line.svg');
-    border: 1px solid blue;
 }
 
 .header__button-gender_women {
     background-image: url('../assets/ri_women-line.svg');
-    border: 1px solid pink;
+}
+
+.men .header__button-gender_men {
+    border: 1px solid #1178B2;
+}
+
+.women .header__button-gender_women {
+    border: 1px solid #C300C7;
 }
 
 .card {
     flex-grow: 1;
-    padding: 32px 0;
+    padding: 32px 0 15px;
     display: flex;
     align-items: center;
 }
@@ -138,36 +160,69 @@ img {
     font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
 }
 
+.women .card__text {
+    font-family: 'Bad Script';
+}
+
+.men .card__text {
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.footer {
+    padding-bottom: 17px 0;
+}
+
 .footer__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer p {
-    font-size: 16px;
-    margin: 5px 0;
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.footer a {
+.footer__social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li a {
     display: block;
     float: left;
     text-indent: -3000px;
     height: 36px;
-    width: 35px;
-    margin-left: 15px;
+    width: 36px;
 }
-.footer .tg {
+.footer ul li .tg {
     background: url(/assets/social/bi_telegram.svg) 50% 50% no-repeat;
 }
-.footer .vk {
+.footer ul li .vk {
     background: url(/assets/social/entypo-social_vk-with-circle.svg) 50% 50% no-repeat;
 }
-.footer .pinterest {
+.footer ul li .pinterest {
     background: url(/assets/social/foundation_social-pinterest.svg) 50% 50% no-repeat;
 }
-.footer .stumb {
+.footer ul li .stumb {
     background: url(/assets/social/foundation_social-stumbleupon.svg) 50% 50% no-repeat;
+}
+
+.women .footer ul li {
+    filter: invert(42%) sepia(98%) saturate(7452%) hue-rotate(290deg) brightness(86%) contrast(121%);
 }
 
 @media (max-width: 880px) {
@@ -190,5 +245,18 @@ img {
         height: 40px;
         background-size: 25px;
         margin-right: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer__contacts {
+        order: 1;
+    }
+    .footer__social {
+
     }
 }
